@@ -1,0 +1,28 @@
+@extends('templates.base')
+@section('title', 'Inserir comentario')
+@section('h1', 'Inserir comentario')
+
+@section('content')
+<div class="row">
+    <div class="col-4">
+
+        <form method="post" action="{{ route('comentario.gravar') }}">
+            @csrf
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+
+            <div class="mb-3">
+                <label for="comentario" class="form-label">Comentário</label>
+                <textarea type="text" class="form-control" id="comentario" name="comentario" maxlength="2000">Digite o seu comentário</textarea>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Gravar</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+@endsection
